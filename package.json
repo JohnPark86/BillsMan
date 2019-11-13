@@ -1,0 +1,23 @@
+{
+  "name": "billsman",
+  "version": "1.0.0",
+  "description": "Bills manager app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnPark86/BillsMan.git"
+  },
+  "keywords": [
+    "bills",
+    "manager"
+  ],
+  "author": "John Park",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnPark86/BillsMan/issues"
+  },
+  "homepage": "https://github.com/JohnPark86/BillsMan#readme"
+}
