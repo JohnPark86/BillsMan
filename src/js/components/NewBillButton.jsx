@@ -12,7 +12,7 @@ const NewBillButton = () => {
 		return (
 			<>
 				<button onClick={showModal}>New Bill</button>
-				<NewBillModal />
+				<NewBillModal isVisible={isVisible} showModal={showModal} />
 			</>
 		);
 	} else {

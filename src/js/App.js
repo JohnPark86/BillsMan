@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Input from './components/Input';
-import NewBillButton from './components/NewBillButton';
-import NewBillModal from './components/NewBillModal';
+import Header from './components/Header'
 
 const App = () => {
 	return (
 		<>
-			<NewBillButton />
+			<Header />
 		</>
 	);
 };
