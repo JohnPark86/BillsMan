@@ -1,12 +1,23 @@
-import React, { useState , useEffect} from 'react';
-
+import React, { useState, useEffect } from 'react';
+import NewBillModal from './NewBillModal';
 
 const NewBillButton = () => {
+	const [isVisible, setIsVisibile] = useState(false);
 
+	const showModal = () => {
+		setIsVisibile(!isVisible);
+	};
 
-    return(
-        <button>New Bill</button>
-    );
-}
+	if (isVisible) {
+		return (
+			<>
+				<button onClick={showModal}>New Bill</button>
+				<NewBillModal />
+			</>
+		);
+	} else {
+		return <button onClick={showModal}>New Bill</button>;
+	}
+};
 
-export default NewBillButton
+export default NewBillButton;
