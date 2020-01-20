@@ -10,7 +10,7 @@ const NewBillModal = (props) => {
 	const transitions = useTransition(props.isVisible, null, {
 		from: { opacity: 0, y: -20 },
 		enter: { opacity: 1, y: 0 },
-		leave: { opacity: 0, y: 10 }
+		leave: { opacity: 0, y: 20 }
 	});
 
 	const closeModal = () => {
@@ -24,6 +24,7 @@ const NewBillModal = (props) => {
 					item && (
 						<AnimatedDialogOverlay
 							style={{ opacity: styles.opacity }}
+							onDismiss={closeModal}
 						>
 							<AnimatedDialogContent
 								style={{
@@ -36,7 +37,7 @@ const NewBillModal = (props) => {
 								}}
 							>
 								<div>
-									<h3>New Bill </h3>
+									<h4>New Bill </h4>
 									<hr />
 									<p>
 										Please enter the information for a new

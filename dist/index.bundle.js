@@ -1067,6 +1067,24 @@ module.exports = exports;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/app.scss":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/app.scss ***!
+  \********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "body {\n  background-color: #66B9BF; }\n\n.grid {\n  display: grid; }\n\n.roundedButton {\n  width: 60px;\n  height: 60px;\n  background-color: #66B9BF;\n  border: 3px solid #E37222;\n  display: inline-block;\n  margin: 2px;\n  cursor: pointer;\n  border-radius: 50%;\n  line-height: 0.5;\n  justify-self: end; }\n  .roundedButton span {\n    font-size: 4em; }\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/api.js":
 /*!*****************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/api.js ***!
@@ -39380,6 +39398,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Input */ "./src/js/components/Input.jsx");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Header */ "./src/js/components/Header.jsx");
+/* harmony import */ var _scss_app_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../scss/app.scss */ "./src/scss/app.scss");
+/* harmony import */ var _scss_app_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_scss_app_scss__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -39407,16 +39428,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var headerStyle = {
-  backgroundColor: 'lightBlue',
+  backgroundColor: '#EEAA7B',
+  borderRadius: '10px',
   height: '4em',
-  display: 'grid',
-  gridTemplateColumns: 'auto 20%'
+  gridTemplateColumns: 'auto 10%'
+};
+var titleStyle = {
+  fontFamily: 'Courier New',
+  paddingLeft: '1em'
 };
 
 var Header = function Header(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "grid",
     style: headerStyle
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewBillButton__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    style: titleStyle
+  }, "Bills Manager."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewBillButton__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -39506,15 +39534,17 @@ var NewBillButton = function NewBillButton() {
 
   if (isVisible) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "roundedButton",
       onClick: showModal
-    }, "New Bill"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewBillModal__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "+")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewBillModal__WEBPACK_IMPORTED_MODULE_1__["default"], {
       isVisible: isVisible,
       showModal: showModal
     }));
   } else {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "roundedButton",
       onClick: showModal
-    }, "New Bill");
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "+"));
   }
 };
 
@@ -39558,7 +39588,7 @@ var NewBillModal = function NewBillModal(props) {
     },
     leave: {
       opacity: 0,
-      y: 10
+      y: 20
     }
   });
 
@@ -39573,7 +39603,8 @@ var NewBillModal = function NewBillModal(props) {
     return item && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AnimatedDialogOverlay, {
       style: {
         opacity: styles.opacity
-      }
+      },
+      onDismiss: closeModal
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AnimatedDialogContent, {
       style: {
         transform: styles.y.interpolate(function (value) {
@@ -39582,13 +39613,44 @@ var NewBillModal = function NewBillModal(props) {
         border: '4px solid hsla(0, 0%, 0%, 0.5)',
         borderRadius: 10
       }
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "New Bill "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Please enter the information for a new bill."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "New Bill "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Please enter the information for a new bill."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       onClick: closeModal
     }, "Okay")))));
   }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NewBillModal);
+
+/***/ }),
+
+/***/ "./src/scss/app.scss":
+/*!***************************!*\
+  !*** ./src/scss/app.scss ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./app.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/app.scss");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
 
 /***/ })
 

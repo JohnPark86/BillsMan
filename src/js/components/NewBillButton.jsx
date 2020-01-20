@@ -11,12 +11,18 @@ const NewBillButton = () => {
 	if (isVisible) {
 		return (
 			<>
-				<button onClick={showModal}>New Bill</button>
+				<button className='roundedButton' onClick={showModal}>
+					<span>+</span>
+				</button>
 				<NewBillModal isVisible={isVisible} showModal={showModal} />
 			</>
 		);
 	} else {
-		return <button onClick={showModal}>New Bill</button>;
+		return (
+			<button className='roundedButton' onClick={showModal}>
+				<span>+</span>
+			</button>
+		);
 	}
 };
 

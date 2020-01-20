@@ -1,9 +1,24 @@
-body{
-  //  background-color: #81D4FA;
+body {
+	background-color: #66b9bf;
 }
 
-.fade
-{
-  background: #000000;
-  opacity: 0.5;
+.grid {
+	display: grid;
+}
+
+.roundedButton {
+	width: 60px;
+	height: 60px;
+	background-color: #66b9bf;
+	border: 3px solid #e37222;
+	display: inline-block;
+	margin: 2px;
+	cursor: pointer;
+	border-radius: 50%;
+	line-height: 0.5;
+	justify-self: end;
+
+	span {
+		font-size: 4em;
+	}
 }

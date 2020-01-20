@@ -3,17 +3,21 @@ import React, { useState, useEffect } from 'react';
 import NewBillButton from './NewBillButton';
 
 const headerStyle = {
-    backgroundColor : '#EEAA7B',
-    height: '4em',
-    display: 'grid',
-    gridTemplateColumns: 'auto 20%'
-}
+	backgroundColor: '#EEAA7B',
+	borderRadius: '10px',
+	height: '4em',
+	gridTemplateColumns: 'auto 10%'
+};
+
+const titleStyle = {
+	fontFamily: 'Courier New',
+	paddingLeft: '1em'
+};
 
 const Header = (props) => {
-
 	return (
-		<div style={headerStyle}>
-            <div />
+		<div className='grid' style={headerStyle}>
+			<h1 style={titleStyle}>Bills Manager.</h1>
 			<NewBillButton />
 		</div>
 	);
