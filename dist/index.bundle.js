@@ -1078,7 +1078,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  background-color: #66B9BF; }\n\n.grid {\n  display: grid; }\n\n.roundedButton {\n  width: 60px;\n  height: 60px;\n  background-color: #66B9BF;\n  border: 3px solid #E37222;\n  display: inline-block;\n  margin: 2px;\n  cursor: pointer;\n  border-radius: 50%;\n  line-height: 0.5;\n  justify-self: end; }\n  .roundedButton span {\n    font-size: 4em; }\n", ""]);
+exports.push([module.i, "body {\n  background-color: #66b9bf; }\n\n.grid {\n  display: grid; }\n\n.roundedButton {\n  width: 60px;\n  height: 60px;\n  background-color: #66b9bf;\n  border: 3px solid #e37222;\n  display: inline-block;\n  margin: 2px;\n  cursor: pointer;\n  border-radius: 50%;\n  line-height: 0.5;\n  justify-self: end; }\n  .roundedButton span {\n    font-size: 4em; }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -39499,6 +39499,77 @@ var Input = function Input(props) {
 
 /***/ }),
 
+/***/ "./src/js/components/Modal/Modal.jsx":
+/*!*******************************************!*\
+  !*** ./src/js/components/Modal/Modal.jsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _reach_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @reach/dialog */ "./node_modules/@reach/dialog/dist/dialog.esm.js");
+/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-spring */ "./node_modules/react-spring/web.js");
+/* harmony import */ var _reach_dialog_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @reach/dialog/styles.css */ "./node_modules/@reach/dialog/styles.css");
+/* harmony import */ var _reach_dialog_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_reach_dialog_styles_css__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+var Modal = function Modal(props) {
+  var AnimatedDialogOverlay = Object(react_spring__WEBPACK_IMPORTED_MODULE_2__["animated"])(_reach_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogOverlay"]);
+  var AnimatedDialogContent = Object(react_spring__WEBPACK_IMPORTED_MODULE_2__["animated"])(_reach_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogContent"]);
+  var transitions = Object(react_spring__WEBPACK_IMPORTED_MODULE_2__["useTransition"])(props.isVisible, null, {
+    from: {
+      opacity: 0,
+      y: -20
+    },
+    enter: {
+      opacity: 1,
+      y: 0
+    },
+    leave: {
+      opacity: 0,
+      y: 20
+    }
+  });
+
+  var closeModal = function closeModal() {
+    props.showModal();
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, transitions.map(function (_ref) {
+    var item = _ref.item,
+        key = _ref.key,
+        styles = _ref.props;
+    return item && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AnimatedDialogOverlay, {
+      style: {
+        opacity: styles.opacity
+      },
+      onDismiss: closeModal,
+      key: key
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AnimatedDialogContent, {
+      style: {
+        transform: styles.y.interpolate(function (value) {
+          return "translate3d(0px, ".concat(value, "px, 0px)");
+        }),
+        border: '4px solid rgba(191, 55, 34, 0.7)',
+        borderRadius: 10
+      },
+      "aria-label": "modal"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, props.title, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), props.body, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      onClick: closeModal
+    }, "Okay")))));
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Modal);
+
+/***/ }),
+
 /***/ "./src/js/components/NewBillButton.jsx":
 /*!*********************************************!*\
   !*** ./src/js/components/NewBillButton.jsx ***!
@@ -39563,60 +39634,25 @@ var NewBillButton = function NewBillButton() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _reach_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @reach/dialog */ "./node_modules/@reach/dialog/dist/dialog.esm.js");
-/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-spring */ "./node_modules/react-spring/web.js");
-/* harmony import */ var _reach_dialog_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @reach/dialog/styles.css */ "./node_modules/@reach/dialog/styles.css");
-/* harmony import */ var _reach_dialog_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_reach_dialog_styles_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Input */ "./src/js/components/Input.jsx");
-
-
-
+/* harmony import */ var _Modal_Modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Modal/Modal */ "./src/js/components/Modal/Modal.jsx");
 
 
 
 var NewBillModal = function NewBillModal(props) {
-  var AnimatedDialogOverlay = Object(react_spring__WEBPACK_IMPORTED_MODULE_2__["animated"])(_reach_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogOverlay"]);
-  var AnimatedDialogContent = Object(react_spring__WEBPACK_IMPORTED_MODULE_2__["animated"])(_reach_dialog__WEBPACK_IMPORTED_MODULE_1__["DialogContent"]);
-  var transitions = Object(react_spring__WEBPACK_IMPORTED_MODULE_2__["useTransition"])(props.isVisible, null, {
-    from: {
-      opacity: 0,
-      y: -20
-    },
-    enter: {
-      opacity: 1,
-      y: 0
-    },
-    leave: {
-      opacity: 0,
-      y: 20
-    }
-  });
-
-  var closeModal = function closeModal() {
-    props.showModal();
+  var renderBody = function renderBody() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " Information about new bill will go here");
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, transitions.map(function (_ref) {
-    var item = _ref.item,
-        key = _ref.key,
-        styles = _ref.props;
-    return item && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AnimatedDialogOverlay, {
-      style: {
-        opacity: styles.opacity
-      },
-      onDismiss: closeModal
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AnimatedDialogContent, {
-      style: {
-        transform: styles.y.interpolate(function (value) {
-          return "translate3d(0px, ".concat(value, "px, 0px)");
-        }),
-        border: '4px solid hsla(0, 0%, 0%, 0.5)',
-        borderRadius: 10
-      }
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "New Bill "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Please enter the information for a new bill."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      onClick: closeModal
-    }, "Okay")))));
-  }));
+  var renderTitle = function renderTitle() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "New Bill:");
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal_Modal__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    isVisible: props.isVisible,
+    showModal: props.showModal,
+    title: renderTitle(),
+    body: renderBody()
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NewBillModal);
