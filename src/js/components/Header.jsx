@@ -5,7 +5,6 @@ import NewBillButton from './NewBillButton';
 const headerStyle = {
 	backgroundColor: '#EEAA7B',
 	borderRadius: '10px',
-	height: '4em',
 	gridTemplateColumns: 'auto 10%'
 };
 
