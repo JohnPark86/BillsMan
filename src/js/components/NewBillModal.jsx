@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal/Modal';
+import Input from './Input';
 
 const NewBillModal = (props) => {
-	
 	const renderBody = () => {
-		return <p> Information about new bill will go here</p>;
+		return (
+			<div>
+				<Input idVal='title' label='Title of new bill: ' />
+				<Input idVal='amount' label='Amount owed: ' />
+			</div>
+		);
 	};
 
 	const renderTitle = () => {
-		return(<h4>New Bill:</h4>)
-	}
+		return <h1>New Bill:</h1>;
+	};
 
 	return (
 		<Modal
