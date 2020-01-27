@@ -3,10 +3,9 @@ import { Dialog, DialogOverlay, DialogContent } from '@reach/dialog';
 import { useTransition, animated } from 'react-spring';
 import '@reach/dialog/styles.css';
 
-
 const submitStyle = {
-    justifySelf: 'end'
-}
+	justifySelf: 'end'
+};
 
 const Modal = (props) => {
 	const AnimatedDialogOverlay = animated(DialogOverlay);
@@ -18,11 +17,12 @@ const Modal = (props) => {
 	});
 
 	const closeModal = () => {
+		props.onSubmit();
 		props.showModal();
 	};
 
 	return (
-		<div>
+		<div key='outer'>
 			{transitions.map(
 				({ item, key, props: styles }) =>
 					item && (
@@ -47,8 +47,11 @@ const Modal = (props) => {
 									<hr />
 									{props.body}
 									<hr />
-									<div className="grid">
-										<button style={submitStyle}onClick={closeModal}>
+									<div className='grid'>
+										<button
+											style={submitStyle}
+											onClick={closeModal}
+										>
 											Submit
 										</button>
 									</div>

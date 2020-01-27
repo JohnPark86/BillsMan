@@ -3,12 +3,20 @@ import Input from './components/Input';
 import Header from './components/Header';
 import '../scss/app.scss';
 
+const AppContext = React.createContext();
+
 const App = () => {
+	const update = (value) => {
+		console.log('update: ', value);
+	};
+
 	return (
-		<>
-			<Header />
-		</>
+		<AppContext.Provider value={{update : update }}>
+			<div>
+				<Header />
+			</div>
+		</AppContext.Provider>
 	);
 };
 
-export default App;
+export { App, AppContext };

@@ -18,7 +18,7 @@ const NewBillButton = () => {
 	};
 
 	return (
-		<>
+		<div key='button'>
 			<button
 				style={billButton}
 				className='roundedButton'
@@ -27,9 +27,9 @@ const NewBillButton = () => {
 				<span>+</span>
 			</button>
 			{isVisible ? (
-				<NewBillModal isVisible={isVisible} showModal={showModal} />
+				<NewBillModal key='newBillModal' isVisible={isVisible} showModal={showModal} />
 			) : null}
-		</>
+		</div>
 	);
 };
 
