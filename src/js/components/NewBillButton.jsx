@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import NewBillModal from './NewBillModal';
 
 const billButton = {
@@ -13,23 +13,23 @@ const billButton = {
 const NewBillButton = () => {
 	const [isVisible, setIsVisibile] = useState(false);
 
-	const showModal = () => {
+	const toggleModal = () => {
 		setIsVisibile(!isVisible);
 	};
 
 	return (
-		<div key='button'>
+		<>
 			<button
 				style={billButton}
 				className='roundedButton'
-				onClick={showModal}
+				onClick={toggleModal}
 			>
 				<span>+</span>
 			</button>
 			{isVisible ? (
-				<NewBillModal key='newBillModal' isVisible={isVisible} showModal={showModal} />
+				<NewBillModal key='newBillModal' isVisible={isVisible} toggleModal={toggleModal} />
 			) : null}
-		</div>
+		</>
 	);
 };
 

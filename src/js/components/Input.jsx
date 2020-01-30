@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const inputStyle = {
@@ -17,33 +17,31 @@ const labelStyle = {
 	fontSize: '22px'
 };
 
-const Input = (props) => {
-
-	const handleChange = (event) => {
-		props.handleChange(event.target.value);
-	};
+const Input = React.forwardRef((props, ref) => {
 
 	return (
-		<div tabIndex="-1" className='grid' style={rowStyle}>
+		<div className='grid' style={rowStyle}>
 			<label style={labelStyle} htmlFor={props.idVal}>
 				{props.label}
 			</label>
 			<input
-				tabIndex="0"
 				style={inputStyle}
 				id={props.idVal}
-				value={props.value}
-				onChange={handleChange}
 				type='text'
+				ref={ref}
+				placeholder={props.placeholder}
 			/>
 		</div>
 	);
-};
+});
 
 Input.propTypes = {
 	idVal: PropTypes.string.isRequired,
 	label: PropTypes.string.isRequired,
-	handleChange: PropTypes.func.isRequired
+	forwardedRef: PropTypes.oneOfType([
+		PropTypes.func, 
+		PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+	])
 };
 
 export default Input;

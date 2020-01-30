@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Dialog, DialogOverlay, DialogContent } from '@reach/dialog';
 import { useTransition, animated } from 'react-spring';
 import '@reach/dialog/styles.css';
@@ -14,15 +14,18 @@ const Modal = (props) => {
 		from: { opacity: 0, y: -20 },
 		enter: { opacity: 1, y: 0 },
 		leave: { opacity: 0, y: 20 }
-	});
+    });
+    
+    const closeModal = () => {
+        props.toggleModal();
+    }
 
-	const closeModal = () => {
+	const submit = () => {
 		props.onSubmit();
-		props.showModal();
-	};
+    }
 
 	return (
-		<div key='outer'>
+		<div>
 			{transitions.map(
 				({ item, key, props: styles }) =>
 					item && (
@@ -30,6 +33,7 @@ const Modal = (props) => {
 							style={{ opacity: styles.opacity }}
 							onDismiss={closeModal}
 							key={key}
+							initialFocusRef={false}
 						>
 							<AnimatedDialogContent
 								style={{
@@ -50,7 +54,7 @@ const Modal = (props) => {
 									<div className='grid'>
 										<button
 											style={submitStyle}
-											onClick={closeModal}
+											onClick={submit}
 										>
 											Submit
 										</button>
