@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Input from './components/Input';
 import Header from './components/Header';
+import BillsTable from './components/BillsTable';
 import '../scss/app.scss';
 
 const AppContext = React.createContext();
@@ -24,15 +24,7 @@ const App = () => {
 		<AppContext.Provider value={{ update: update }}>
 			<div>
 				<Header />
-				{bills.length > 0
-					? bills.map((bill, idx) => {
-							return (
-								<h2 key={`bill_${idx}`}>
-									{bill.title} : {bill.amount}{' '}
-								</h2>
-							);
-					})
-					: null}
+				{bills.length > 0 ? <BillsTable bills={bills} /> : null}
 			</div>
 		</AppContext.Provider>
 	);
