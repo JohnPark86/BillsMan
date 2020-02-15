@@ -16,12 +16,13 @@ const BillsTable = (props) => {
 		{
 			headerName: 'Bill',
 			field: 'title',
-			resizable: true
+			resizable: true,
+			checkboxSelection: true
 		},
 		{
 			headerName: 'Amount',
 			field: 'amount',
-			resizable: true
+			resizable: true,
 		}
 	];
 

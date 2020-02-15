@@ -11,7 +11,7 @@ const NewBillModal = (props) => {
 	const onSubmit = () => {
 		let newBill = {
 			title: titleRef.current.value,
-			amount: amountRef.current.value
+			amount: parseInt(amountRef.current.value)
 		};
 
 		context.update(newBill);
