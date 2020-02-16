@@ -11,7 +11,7 @@ const BillsDueAmount = (props) => {
         setTotalBillsDue(totalDue)
     }, [props.billsDue]);
 
-return(<p>Your total bills stilldue this month : {totalBillsDue}</p>)
+return(<p>Your total bills still due this month : {totalBillsDue}</p>)
 };
 
 export default BillsDueAmount;

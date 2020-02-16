@@ -34,13 +34,22 @@ const BillsTable = (props) => {
 		};
 	};
 
+	const rowSelected = (event) => {
+		console.log(event);
+		console.log(event.node.selected);
+		console.log(event.rowIndex);
+	}
+
 	return (
 		<div className='ag-theme-material' style={gridStyle}>
 			<AgGridReact
 				columnDefs={columnDefs}
 				rowData={props.bills}
-				domLayout='autoHeight'
 				onGridReady={onGridReady}
+				onRowSelected={rowSelected}
+				domLayout='autoHeight'
+				suppressCellSelection='true'
+				rowSelection='multiple'
 			/>
 		</div>
 	);
