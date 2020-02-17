@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const BillsSection = (props) => {
+const BillsBreakdown = (props) => {
     const [totalBills, setTotalBills] = useState(0);
 
 	useEffect(() => {
@@ -11,7 +11,7 @@ const BillsSection = (props) => {
         setTotalBills(total)
     }, [props.bills]);
 
-return(<p>Your total bills this month : {totalBills}</p>)
+return(<p>Your total bills{props.outputText}this month : {totalBills}</p>)
 };
 
-export default BillsSection;
+export default BillsBreakdown;

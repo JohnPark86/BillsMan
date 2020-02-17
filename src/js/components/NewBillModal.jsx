@@ -14,7 +14,7 @@ const NewBillModal = (props) => {
 			amount: parseInt(amountRef.current.value)
 		};
 
-		context.update(newBill);
+		context.addBill(newBill);
 		props.toggleModal();
 	};
 

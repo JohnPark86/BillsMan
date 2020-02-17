@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../App';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
@@ -12,6 +13,7 @@ const gridStyle = {
 };
 
 const BillsTable = (props) => {
+	const context = useContext(AppContext);
 	const columnDefs = [
 		{
 			headerName: 'Bill',
@@ -35,9 +37,7 @@ const BillsTable = (props) => {
 	};
 
 	const rowSelected = (event) => {
-		console.log(event);
-		console.log(event.node.selected);
-		console.log(event.rowIndex);
+		context.update(event.node.data, event.node.selected)
 	}
 
 	return (
