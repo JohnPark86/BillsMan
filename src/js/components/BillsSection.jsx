@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import BillsTable from './BillsTable';
 import BillsBreakdown from './BillsBreakdown';
 
+const BreakdownContainer = {
+	display: 'grid',
+	gridTemplateColumns: '30% 30% 30%',
+	width: '90%',
+	margin: '2em auto',
+	gridGap: '3em'
+};
+
 const BillsSection = (props) => {
 	const [bills, setBills] = useState({
 		totalBills: props.bills,
@@ -27,7 +35,7 @@ const BillsSection = (props) => {
 
 	return (
 		<>
-			<div>
+			<div style={BreakdownContainer}>
 				<BillsBreakdown
 					bills={bills.billsPaid}
 					outputText={' paid so far '}
