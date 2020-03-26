@@ -5,7 +5,7 @@ const BreakdownStyle = {
 	backgroundColor: 'rgba(7, 136, 156, 0.7)',
 	padding: '1em',
 	width: '70%',
-	height: '70%',
+	height: '60%',
 	display: 'grid',
 	gridTemplateRows: '40% auto',
     gridColumnGap: '1em',

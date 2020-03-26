@@ -6,7 +6,7 @@ const BreakdownContainer = {
 	display: 'grid',
 	gridTemplateColumns: '30% 30% 30%',
 	width: '90%',
-	margin: '2em auto',
+	margin: '2em auto 1em',
 	gridGap: '3em'
 };
 
