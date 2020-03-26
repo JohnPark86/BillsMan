@@ -9,8 +9,12 @@ const NewBillModal = (props) => {
 	const context = useContext(AppContext);
 
 	const onSubmit = () => {
+		let newTitle = titleRef.current.value;
+		let newID = newTitle + '_' + Math.floor(Math.random() * Math.floor(100));
+
 		let newBill = {
-			title: titleRef.current.value,
+			id: newID,
+			title: newTitle,
 			amount: parseInt(amountRef.current.value)
 		};
 
@@ -38,7 +42,7 @@ const NewBillModal = (props) => {
 	};
 
 	const renderTitle = () => {
-		return <h1>New Bill:</h1>;
+		return <h2>New Bill:</h2>;
 	};
 
 	return (

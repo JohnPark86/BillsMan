@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import NewBillButton from './NewBillButton';
 
 const headerStyle = {
 	backgroundColor: '#EEAA7B',
@@ -17,7 +16,6 @@ const Header = (props) => {
 	return (
 		<div className='grid' style={headerStyle}>
 			<h1 style={titleStyle}>Bills Manager.</h1>
-			<NewBillButton />
 		</div>
 	);
 };

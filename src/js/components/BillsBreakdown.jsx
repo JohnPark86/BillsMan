@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const BreakdownStyle = {
-	borderRadius: '25px',
+	borderRadius: '40px',
 	backgroundColor: 'rgba(7, 136, 156, 0.7)',
 	padding: '1em',
 	width: '70%',

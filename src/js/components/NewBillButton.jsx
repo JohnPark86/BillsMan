@@ -4,9 +4,9 @@ import NewBillModal from './NewBillModal';
 const billButton = {
 	width: '60px',
 	height: '60px',
-	margin: '10px',
-	backgroundColor: '#66b9bf',
-	border: '3px solid #e37222',
+	margin: '0 4.5em',
+	backgroundColor: '#EEAA7B',
+	border: '1px solid #e37222',
 	justifySelf: 'end'
 };
 
