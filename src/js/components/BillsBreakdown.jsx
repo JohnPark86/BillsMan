@@ -5,8 +5,9 @@ const BreakdownStyle = {
 	backgroundColor: 'rgba(7, 136, 156, 0.7)',
 	padding: '1em',
 	width: '70%',
+	height: '70%',
 	display: 'grid',
-	gridTemplateColumns: '60% auto',
+	gridTemplateRows: '40% auto',
     gridColumnGap: '1em',
     justifySelf: 'center',
 	fontFamily: 'helvetica',
@@ -36,8 +37,9 @@ const BillsBreakdown = (props) => {
 
 	return (
 		<div style={BreakdownStyle}>
-			<p style={BreakdownText}>Total bills{props.outputText}this month </p>
-			<p style={BreakdownTotal}>{totalBills}</p>
+			<p style={BreakdownText}>Total bills{props.outputText}</p>
+			<hr />
+			<p style={BreakdownTotal}>{new Intl.NumberFormat().format(totalBills)}</p>
 		</div>
 	);
 };
