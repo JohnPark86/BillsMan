@@ -43,15 +43,25 @@ const App = () => {
 	};
 
 	const update = (value, isPaid) => {
-		console.log(value);
-		console.log(isPaid);
+		let updatedBills = bills.map((bill) => {
+			if (bill.id === value.id) {
+				bill['paid'] = isPaid;
+			}
+			return bill;
+		});
+
+		setBills(updatedBills)
 	};
 
 	return (
 		<AppContext.Provider value={{ addBill: addBill, update: update }}>
 			<div>
 				<Header />
-				{bills.length > 0 ? <BillsSection bills={bills} /> : <NewBillSection />}
+				{bills.length > 0 ? (
+					<BillsSection bills={bills} />
+				) : (
+					<NewBillSection />
+				)}
 			</div>
 		</AppContext.Provider>
 	);

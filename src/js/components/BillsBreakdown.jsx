@@ -7,9 +7,10 @@ const BreakdownStyle = {
 	width: '70%',
 	display: 'grid',
 	gridTemplateColumns: '60% auto',
-    gridColumnGap: '2em',
+    gridColumnGap: '1em',
     justifySelf: 'center',
-    fontFamily: 'helvetica'
+	fontFamily: 'helvetica',
+	wordBreak: 'break-word'
 };
 
 const BreakdownText = {
