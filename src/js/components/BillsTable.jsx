@@ -12,7 +12,7 @@ const gridStyle = {
 	margin: '1em auto auto',
 	fontSize: '16px',
 	border: '5px solid #E37222',
-	borderRadius: '5px'
+	borderRadius: '5px',
 };
 
 const BillsTable = (props) => {
@@ -27,13 +27,18 @@ const BillsTable = (props) => {
 		{
 			headerName: 'Amount',
 			field: 'amount',
-			resizable: true
-		}
+			resizable: true,
+		},
 	];
 
 	const onGridReady = (params) => {
 		let gridApi = params.api;
 		gridApi.sizeColumnsToFit();
+		gridApi.forEachLeafNode( (node) => {
+			if (node.data.paid === true) {
+				node.setSelected(true);
+			}
+		 });
 		window.onresize = () => {
 			gridApi.sizeColumnsToFit();
 		};

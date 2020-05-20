@@ -9,25 +9,28 @@ const AppContext = React.createContext();
 
 const App = () => {
 	const [bills, setBills] = useState([
-		// {
-		// 	title: 'test1',
-		// 	amount: 500,
-		// 	paid: true
-		// },
-		// {
-		// 	title: 'test2',
-		// 	amount: 250,
-		// 	paid: false
-		// },
-		// {
-		// 	title: 'test3',
-		// 	amount: 300,
-		// 	paid: false
-		// }
+		{
+			title: 'test1',
+			amount: 500,
+			paid: true,
+			id: 1
+		},
+		{
+			title: 'test2',
+			amount: 250,
+			paid: false,
+			id: 2
+		},
+		{
+			title: 'test3',
+			amount: 300,
+			paid: true,
+			id: 3
+		}
 	]);
 
 	useEffect(() => {
-		console.log(bills);
+		console.log('use effect: ', bills);
 	}, [bills]);
 
 	const isValidBill = (bill) => {
@@ -49,10 +52,9 @@ const App = () => {
 			}
 			return bill;
 		});
-
 		setBills(updatedBills)
 	};
-
+	
 	return (
 		<AppContext.Provider value={{ addBill: addBill, update: update }}>
 			<div>
