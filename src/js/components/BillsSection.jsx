@@ -38,11 +38,11 @@ const BillsSection = (props) => {
 			<div style={BreakdownContainer}>
 				<BillsBreakdown
 					bills={bills.billsPaid}
-					outputText={' paid so far '}
+					outputText={' paid'}
 				/>
 				<BillsBreakdown
 					bills={bills.billsDue}
-					outputText={' still due '}
+					outputText={' due'}
 				/>
 				<BillsBreakdown bills={bills.totalBills} outputText={' '} />
 			</div>
