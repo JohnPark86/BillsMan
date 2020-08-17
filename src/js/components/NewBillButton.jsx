@@ -7,7 +7,7 @@ const billButton = {
 	margin: '0 4.5em',
 	backgroundColor: '#EEAA7B',
 	border: '1px solid #e37222',
-	justifySelf: 'end'
+	justifySelf: 'end',
 };
 
 const NewBillButton = () => {
@@ -26,9 +26,11 @@ const NewBillButton = () => {
 			>
 				<span>+</span>
 			</button>
-			{isVisible ? (
-				<NewBillModal key='newBillModal' isVisible={isVisible} toggleModal={toggleModal} />
-			) : null}
+			<NewBillModal
+				key='newBillModal'
+				isVisible={isVisible}
+				toggleModal={toggleModal}
+			/>
 		</>
 	);
 };
