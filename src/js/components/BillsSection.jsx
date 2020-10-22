@@ -3,12 +3,10 @@ import BillsTable from './BillsTable';
 import BillsBreakdown from './BillsBreakdown';
 
 const BreakdownContainer = {
-	display: 'grid',
-	gridTemplateColumns: '30% 30% 30%',
 	width: '90%',
-	margin: '2em auto 1em',
-	gridGap: '3em'
-};
+	margin: '0 auto',
+	lineHeight: '1'	
+}
 
 const BillsSection = (props) => {
 	const [bills, setBills] = useState({
