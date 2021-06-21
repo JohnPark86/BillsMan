@@ -1,0 +1,20 @@
+[
+    {
+        "title": "test11",
+        "amount": 500,
+        "id": 1,
+        "paid": true
+    },
+    {
+        "title": "test2",
+        "amount": 250,
+        "paid": false,
+        "id": 2
+    },
+    {
+        "title": "test3",
+        "amount": 300,
+        "paid": true,
+        "id": 3
+    }
+]
